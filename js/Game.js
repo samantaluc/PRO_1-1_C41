@@ -7,7 +7,7 @@ class Game {
 
     this.leader1 = createElement("h2");
     this.leader2 = createElement("h2");
-    this.playerMoving = false;
+    this.playerMoving = false;//ADICIONAR TODA A FUNÇÃO AULA 41
   }
 
   getState() {
@@ -130,7 +130,7 @@ class Game {
     if (allPlayers !== undefined) {
       image(track, 0, -height * 5, width, height * 6);
 
-      this.showFuelBar();
+      this.showFuelBar();//ADICIONAR TODA A FUNÇÃO AULA 41
       this.showLife();
       this.showLeaderboard();
 
@@ -152,7 +152,7 @@ class Game {
           fill("red");
           ellipse(x, y, 60, 60);
 
-          this.handleFuel(index);
+          this.handleFuel(index); //ADICIONAR TODA A FUNÇÃO AULA 41
           this.handlePowerCoins(index);
 
           //alterar a posição da câmera na direção y
@@ -206,7 +206,7 @@ class Game {
     pop();
   }
 
-  showFuelBar() {
+  showFuelBar() { //ADICIONAR TODA A FUNÇÃO AULA 41
     push();
     image(fuelImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
     fill("white");
@@ -261,7 +261,7 @@ class Game {
   }
 
   handlePlayerControls() {
-    if (keyIsDown(UP_ARROW)) {
+    if (keyIsDown(UP_ARROW)) { //ADICIONAR TODA A FUNÇÃO AULA 41
       this.playerMoving = true;
       player.positionY += 10;
       player.update();
@@ -288,11 +288,11 @@ class Game {
     });
 
     // reduzindo o combustível do carro
-    if (player.fuel > 0 && this.playerMoving) {
+    if (player.fuel > 0 && this.playerMoving) {//ADICIONAR TODA A FUNÇÃO AULA 41
       player.fuel -= 0.3;
     }
 
-    if (player.fuel <= 0) {
+    if (player.fuel <= 0) {//ADICIONAR TODA A FUNÇÃO AULA 41
       gameState = 2;
       this.gameOver();
     }
@@ -320,7 +320,7 @@ class Game {
     });
   }
 
-  gameOver() {
+  gameOver() {//ADICIONAR TODA A FUNÇÃO AULA 41
     swal({
       title: `Fim de Jogo`,
       text: "Oops você perdeu a corrida!",
